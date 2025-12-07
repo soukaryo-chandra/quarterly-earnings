@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quarterly Earnings — Reveal.js</title>
+
+  <!-- Reveal.js (CDN) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4/dist/theme/solarized.css" id="theme">
+
+  <!-- Highlight.js for code highlighting -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11/styles/github.css">
+
+  <style>
+    /* small footer */
+    .presenter-email { position: fixed; right: 1rem; bottom: 0.5rem; font-size: 0.9rem; opacity: 0.85 }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- Title slide -->
+      <section>
+        <h1>Quarterly Earnings — Q4</h1>
+        <p>Technical presentation (interactive)</p>
+        <p class="presenter-email">Contact: 23f2000311@ds.study.iitm.ac.in</p>
+        <aside class="notes">
+          Intro: quick hello, mention data sources and confidentiality. Explain that this demo uses Reveal.js features.
+        </aside>
+      </section>
+
+      <!-- Markdown slide (uses markdown plugin) -->
+      <section data-markdown>
+        <textarea data-template>
+## Highlights
+
+- Revenue grew **12%** year-over-year.
+- Net income improved due to cost optimization.
+
+### Actions
+1. Expand hedging program.
+2. Prioritize high-margin product lines.
+
+</textarea>
+        <aside class="notes">
+          This slide is authored in Markdown — helpful for content teams and non-technical editors.
+        </aside>
+      </section>
+
+      <!-- Slide with fragments (animated elements) -->
+      <section>
+        <h2>Key KPIs</h2>
+        <ul>
+          <li class="fragment">Revenue: $1.2B</li>
+          <li class="fragment">Operating Margin: 18%</li>
+          <li class="fragment">EPS: $2.15</li>
+        </ul>
+        <aside class="notes">
+          Use fragments to reveal KPIs one at a time to focus audience attention.
+        </aside>
+      </section>
+
+      <!-- Slide with code sample -->
+      <section>
+        <h2>Example — Data Transform (Python)</h2>
+        <pre><code class="language-python">import pandas as pd
+
+def normalize_revenue(df):
+    df['rev_million'] = df['revenue'] / 1_000_000
+    return df
+
+# usage
+# df = normalize_revenue(raw_df)
+</code></pre>
+        <aside class="notes">
+          Walk through the transformation and mention where audited data lives.
+        </aside>
+      </section>
+
+      <!-- Slide with math (financial formula) -->
+      <section>
+        <h2>Present Value of Cash Flows</h2>
+        <p>
+          The net present value (NPV) formula: $$\mathrm{NPV}=\sum_{t=1}^{T}\frac{CF_t}{(1+r)^t}$$
+        </p>
+        <ul>
+          <li class="fragment">\(CF_t\): Cash flow at time t</li>
+          <li class="fragment">r: discount rate</li>
+        </ul>
+        <aside class="notes">
+          Explain discount rate selection and sensitivity around r.
+        </aside>
+      </section>
+
+      <!-- Slide with live demo placeholder / iframe (portfolio) -->
+      <section>
+        <h2>Live Data Demo</h2>
+        <p class="fragment">Embedded dashboards or charts can be placed here (iframe or live JS charts).</p>
+        <aside class="notes">
+          Replace iframe src with internal dashboard link or embed a charting component.
+        </aside>
+      </section>
+
+      <!-- Closing slide with publishing instructions summary -->
+      <section>
+        <h2>Published Copy</h2>
+        <p>Host this file on GitHub Pages at: <br><code>https://soukaryo-chandra.github.io/quarterly-earnings/</code></p>
+        <p class="fragment">Add <code>?v=1</code> (or increment) to force refresh after updates.</p>
+        <aside class="notes">
+          Show stakeholders how to refresh the cache and where to find raw sources in the repo.
+        </aside>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- Reveal core + plugins -->
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4/dist/reveal.js"></script>
+
+  <!-- Markdown support -->
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4/plugin/markdown/markdown.js"></script>
+  <!-- Notes plugin -->
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4/plugin/notes/notes.js"></script>
+  <!-- Math (MathJax) -->
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4/plugin/math/math.js"></script>
+  <!-- Highlight.js for code highlighting -->
+  <script src="https://cdn.jsdelivr.net/npm/highlight.js@11/lib/highlight.js"></script>
+
+  <script>
+    // Reveal initialization
+    Reveal.initialize({
+      hash: true,
+      plugins: [ RevealMarkdown, RevealNotes, RevealMath ],
+      markdown: {
+        smartypants: true
+      },
+      // enable highlight.js autoload
+      highlight: {
+        highlightOnLoad: true
+      }
+    });
+  </script>
+</body>
+</html>
